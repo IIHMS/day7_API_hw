@@ -8,7 +8,8 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 114, 48),
+        title: Center(child: Text("Api for products")),
+        backgroundColor: const Color.fromARGB(55, 48, 109, 105),
       ),
       body:FutureBuilder(
       future: Api().getData(),
@@ -22,30 +23,40 @@ class ProductScreen extends StatelessWidget {
               return Container(
                 margin: EdgeInsets.all(18),
                 padding: EdgeInsets.all(6),
-                color: const Color.fromARGB(255, 10, 26, 105),
+                color: const Color.fromARGB(20, 141, 141, 141),
                 child: Column(
                   children: [
                     Image.network(snapshot.data![index].images?? "No image"),
                     SizedBox(height: 8),
-                    Text(
-                      snapshot.data![index].title ?? "No text",
-                      style: TextStyle(fontSize: 10, color: Colors.white),
-                      ),                    SizedBox(height: 8),
-
-                    Text(
-                      snapshot.data![index].brand ?? "No brand",
-                      style: TextStyle(fontSize: 10, color: Colors.white),
-                      ),                    SizedBox(height: 8),
-
-                    Text(
-                      snapshot.data![index].thumbnail?? "No thumbnail",
-                      style: TextStyle(fontSize: 10, color: Colors.white),
-                      ),                    SizedBox(height: 8),
-
-                    Text(
-                      snapshot.data![index].warrantyInformation?? "No infos",
-                      style: TextStyle(fontSize: 10, color: Colors.white),
+                    Center(
+                      child: Center(
+                        child: Text(
+                         "",
+                          style: TextStyle(fontSize: 10, color: const Color.fromARGB(131, 0, 0, 0)),
+                          ),
                       ),
+                    ),                    SizedBox(height: 8),
+
+                    Center(
+                      child: Text(
+                        snapshot.data![index].brand ?? "No brand",
+                        style: TextStyle(fontSize: 10, color: const Color.fromARGB(255, 0, 0, 0)),
+                        ),
+                    ),                    SizedBox(height: 8),
+
+                    Center(
+                      child: Text(
+                        snapshot.data![index].thumbnail?? "No thumbnail",
+                        style: TextStyle(fontSize: 10, color: const Color.fromARGB(120, 12, 4, 4)),
+                        ),
+                    ),                    SizedBox(height: 8),
+
+                    Center(
+                      child: Text(
+                        snapshot.data![index].warrantyInformation?? "No infos",
+                        style: TextStyle(fontSize: 10, color: const Color.fromARGB(133, 14, 5, 5)),
+                        ),
+                    ),
                   ],
                 ),
               );
