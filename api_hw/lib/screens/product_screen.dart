@@ -29,19 +29,22 @@ class ProductScreen extends StatelessWidget {
                     SizedBox(height: 8),
                     Text(
                       snapshot.data![index].title ?? "No text",
-                      style: TextStyle(fontSize: 10),
-                      ),
+                      style: TextStyle(fontSize: 10, color: Colors.white),
+                      ),                    SizedBox(height: 8),
+
                     Text(
                       snapshot.data![index].brand ?? "No brand",
-                      style: TextStyle(fontSize: 10),
-                      ),
+                      style: TextStyle(fontSize: 10, color: Colors.white),
+                      ),                    SizedBox(height: 8),
+
                     Text(
                       snapshot.data![index].thumbnail?? "No thumbnail",
-                      style: TextStyle(fontSize: 10),
-                      ),
+                      style: TextStyle(fontSize: 10, color: Colors.white),
+                      ),                    SizedBox(height: 8),
+
                     Text(
                       snapshot.data![index].warrantyInformation?? "No infos",
-                      style: TextStyle(fontSize: 10),
+                      style: TextStyle(fontSize: 10, color: Colors.white),
                       ),
                   ],
                 ),
