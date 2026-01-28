@@ -13,7 +13,7 @@ class Api {
 
     List<Product> productList = [];
 
-    for (var item in result["data"]) {
+    for (var item in result["products"]) {
       Product p1 = Product.fromJson(item);
       productList.add(p1);
     }

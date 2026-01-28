@@ -25,22 +25,22 @@ class ProductScreen extends StatelessWidget {
                 color: const Color.fromARGB(255, 10, 26, 105),
                 child: Column(
                   children: [
-                    Image.network(snapshot.data![index].images!),
+                    Image.network(snapshot.data![index].images?? "No image"),
                     SizedBox(height: 8),
                     Text(
-                      snapshot.data![index].title!,
+                      snapshot.data![index].title ?? "No text",
                       style: TextStyle(fontSize: 10),
                       ),
                     Text(
-                      snapshot.data![index].brand!,
+                      snapshot.data![index].brand ?? "No brand",
                       style: TextStyle(fontSize: 10),
                       ),
                     Text(
-                      snapshot.data![index].thumbnail!,
+                      snapshot.data![index].thumbnail?? "No thumbnail",
                       style: TextStyle(fontSize: 10),
                       ),
                     Text(
-                      snapshot.data![index].warrantyInformation!,
+                      snapshot.data![index].warrantyInformation?? "No infos",
                       style: TextStyle(fontSize: 10),
                       ),
                   ],
@@ -52,41 +52,3 @@ class ProductScreen extends StatelessWidget {
     );
   }
 }
-// 5class CharactersScreen extends StatelessWidget {
-//   const CharactersScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(),
-//       body: FutureBuilder(
-//         future: Api().getData(), 
-//         builder: (context, snapshot) {
-//           if(snapshot.connectionState == ConnectionState.waiting){
-//             return Center(child: CircularProgressIndicator());
-//           }
-//           return ListView.builder(
-//             itemCount: snapshot.data!.length,
-//             itemBuilder: (context, index) {
-//               return Container(
-//                 margin: EdgeInsets.all(20),
-//                 padding: EdgeInsets.all(8),
-//                 color: Colors.cyan.shade300,
-//                 child: Column(
-//                   children: [
-//                     Image.network(snapshot.data![index].imageUrl!),
-//                     SizedBox(height: 8),
-//                     Text(
-//                       snapshot.data![index].name!,
-//                       style: TextStyle(fontSize: 22),
-//                       ),
-//                   ],
-//                 ),
-//               );
-//             },
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }
